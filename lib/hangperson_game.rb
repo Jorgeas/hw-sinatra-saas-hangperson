@@ -56,9 +56,4 @@ class HangpersonGame
 
 end
 
-game = HangpersonGame.new('banana')
 
-puts game.guess('d')
-puts game.word_with_guesses
-puts game.guess('e')
-puts game.word_with_guesses
