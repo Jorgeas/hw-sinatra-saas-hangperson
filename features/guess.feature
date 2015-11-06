@@ -32,12 +32,12 @@ Scenario: multiple correct and incorrect guesses
 Scenario: repeated guesses
 
   Given I start a new game with word "foobar"
-  When I make the following guesses: a,i
+  When I make the following guesses: a,a
   Then the word should read "----a-"
-  And I should see "You have already used that letter." within "span.error"
+  And I should see "You have already used that letter."
 
 Scenario: wrong letter
 
   Given I start a new game with word "foobar"
   When I guess "%"
-  Then I should see "Invalid guess." within "span.error"
+  Then I should see "Invalid guess."
