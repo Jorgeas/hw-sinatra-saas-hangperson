@@ -28,3 +28,16 @@ Scenario: multiple correct and incorrect guesses
   When I make the following guesses: a,z,x,o
   Then the word should read "-oo-a-"
   And the wrong guesses should include: z,x
+
+Scenario: repeated guesses
+
+  Given I start a new game with word "foobar"
+  When I make the following guesses: a,i
+  Then the word should read "----a-"
+  And I should see "You have already used that letter." within "span.error"
+
+Scenario: wrong letter
+
+  Given I start a new game with word "foobar"
+  When I guess "%"
+  Then I should see "Invalid guess." within "span.error"
